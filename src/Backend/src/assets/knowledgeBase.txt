@@ -1,0 +1,8 @@
+Author: Name(varchar),Address(varchar),URL(varchar)||FK()#
+Publisher: Name(varchar),Address(varchar),Phone(varchar),URL(integer)||FK()#
+Customer: Email(varchar),Name(varchar),Phone(varchar),Address(varchar)||FK()#
+Book: ISBN(varchar),PublisherName(varchar),AuthorName(varchar),AuthorAddress(varchar),Year(integer),Title(varchar),Price(numeric)||FK(PublisherName++Publisher,AuthorName++Author,AuthorAddress++Author)#
+ShoppingBasket_Book: ShoppingBasketID(integer),BookISBN(varchar),Count(integer)||FK(ShoppingBasketID++ShoppingBasket,BookISBN++Book)#
+ShoppingBasket: ID(integer),CustomerEmail(varchar)||FK(CustomerEmail++Customer)#
+Warehouse_Book: WarehouseCode(integer),BookISBN(varchar),Count(integer)||FK(WarehouseCode++Warehouse,BookISBN++Book)#
+Warehouse: Code(integer),Phone(varchar),Address(varchar)||FK()#
